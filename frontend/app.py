@@ -114,8 +114,8 @@ def plot_time_series_chart(
 
 
 def fetch_top_k_words(tweets: pd.DataFrame, k: int) -> List[str]:
-    preprocessed_tweets = [preprocess_text(tweet) for tweet in tweets["text"].tolist()]
-    top_k_words = get_top_tfidf_words(preprocessed_tweets, k)
+    preprocessed_texts = [preprocess_text(text) for text in tweets["text"].tolist()]
+    top_k_words = get_top_tfidf_words(preprocessed_texts, k)
     return top_k_words
 
 
